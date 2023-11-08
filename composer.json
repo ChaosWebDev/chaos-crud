@@ -1,7 +1,8 @@
 {
   "name": "jpgerber/chaos-crud",
-  "description": "a CRUD",
+  "description": "A simple CRUD processor.",
   "type": "library",
+  "license": "BSD-3-Clause",
   "autoload": {
     "files": [
       "src/Global/classDeclarations.php",
