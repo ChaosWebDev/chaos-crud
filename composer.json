@@ -1,0 +1,22 @@
+{
+  "name": "jpgerber/chaos-crud",
+  "description": "a CRUD",
+  "type": "library",
+  "autoload": {
+    "files": [
+      "src/Global/classDeclarations.php",
+      "src/Global/functions.php"
+    ],
+    "psr-4": {
+      "JPGerber\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jordan Gerber",
+      "email": "jordangerber@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
