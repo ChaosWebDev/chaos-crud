@@ -9,7 +9,7 @@
       "src/Global/functions.php"
     ],
     "psr-4": {
-      "JPGerber\\": "src/"
+      "JPGerber\\ChaosCRUD\\": "src/"
     }
   },
   "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace JPGerber\Network;
+namespace JPGerber\ChaosCRUD\Network;
 
 class IP
 {

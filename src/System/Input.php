@@ -1,6 +1,6 @@
 <?php
 
-namespace JPGerber\System;
+namespace JPGerber\ChaosCRUD\System;
 
 class Input
 {

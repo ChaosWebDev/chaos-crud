@@ -1,12 +1,12 @@
 <?php
 
-use JPGerber\System\Input;
+use JPGerber\ChaosCRUD\System\Input;
 
 function db()
 {
     static $instance = null;
     if ($instance === null) {
-        $instance = new JPGerber\Network\CRUD();
+        $instance = new JPGerber\ChaosCRUD\Network\CRUD();
     }
     return $instance;
 }
@@ -15,7 +15,7 @@ function ip()
 {
     static $instance = null;
     if ($instance === null) {
-        $instance = new JPGerber\Network\IP();
+        $instance = new JPGerber\ChaosCRUD\Network\IP();
     }
     return $instance;
 }
