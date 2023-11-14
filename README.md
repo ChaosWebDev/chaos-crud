@@ -173,7 +173,7 @@
       <ul>
         <h4>Order of Limits for Update and Delete (when setSafe(true) or not set)</h4>
         <li>addLimit(int)</li>
-        <li>$_ENV['SAFETY_LIMIT</li>
+        <li>$_ENV['SAFETY_LIMIT']</li>
         <li>1</li>
       </ul>
     </ul>
