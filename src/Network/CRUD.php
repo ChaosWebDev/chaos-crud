@@ -31,10 +31,10 @@ class CRUD
         $this->safe = true;
         $this->sql = $this->table = "";
 
-        $this->host = $db_host ?? $_ENV['DB_HOST'] ?? $_SESSION['DB_HOST'];
-        $this->name = $db_name ?? $_ENV['DB_NAME'] ?? $_SESSION['DB_NAME'];
-        $this->user = $db_user ?? $_ENV['DB_USER'] ?? $_SESSION['DB_USER'];
-        $this->pass = $db_pass ?? $_ENV['DB_PASS'] ?? $_SESSION['DB_PASS'];
+        $this->host = $db_host ?? $_ENV['DB_HOST'] ?? $_SESSION['DB_HOST'] ?? null;
+        $this->name = $db_name ?? $_ENV['DB_NAME'] ?? $_SESSION['DB_NAME'] ?? null;
+        $this->user = $db_user ?? $_ENV['DB_USER'] ?? $_SESSION['DB_USER'] ?? null;
+        $this->pass = $db_pass ?? $_ENV['DB_PASS'] ?? $_SESSION['DB_PASS'] ?? null;
     }
 
     private function connect(): object
