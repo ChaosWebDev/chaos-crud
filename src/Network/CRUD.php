@@ -17,9 +17,8 @@ class CRUD
     private bool $return_last_id;
     private bool $safe;
     private string $sql;
-    private $host, $name, $user, $pass;
 
-    public function __construct($db_host = null, $db_name = null, $db_user = null, $db_pass = null)
+    public function __construct(private $host, private $name, private $user, private $pass)
     {
         $this->cols = [];
         $this->conditions = [];
@@ -30,11 +29,6 @@ class CRUD
         $this->return_last_id = false;
         $this->safe = true;
         $this->sql = $this->table = "";
-
-        $this->host = $db_host ?? $_ENV['DB_HOST'] ?? $_SESSION['DB_HOST'] ?? null;
-        $this->name = $db_name ?? $_ENV['DB_NAME'] ?? $_SESSION['DB_NAME'] ?? null;
-        $this->user = $db_user ?? $_ENV['DB_USER'] ?? $_SESSION['DB_USER'] ?? null;
-        $this->pass = $db_pass ?? $_ENV['DB_PASS'] ?? $_SESSION['DB_PASS'] ?? null;
     }
 
     private function connect(): object
@@ -50,8 +44,6 @@ class CRUD
             $conn = new PDO($dsn, $user, $pass);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            phpinfo();
-            pr($e);
             die("Unable to connect: " . $e->getMessage());
         }
 
@@ -60,7 +52,7 @@ class CRUD
 
     public function table(string $table)
     {
-        $this->__construct();
+        $this->__construct($this->host, $this->name, $this->user, $this->pass);
         $this->table = $table;
         return $this;
     }
@@ -274,6 +266,6 @@ class CRUD
             dd($e);
         }
 
-        $this->__construct();
+        $this->__construct($this->host, $this->name, $this->user, $this->pass);
     }
 }
